@@ -23,7 +23,10 @@ func ScpFile(src, dst string) error {
 	}
 	//delay closing destination file
 	defer dstfile.Close()
-
+	
+	//io.Copy可替代下面的for循环
+	//io.Copy(dstfile, srcfile)
+	
 	//Copy source files to destination file
 	//Define 'tmpdata' to store temporarily read file contents
 	tmpdata := make([]byte, 1024)
