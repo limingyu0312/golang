@@ -7,7 +7,7 @@ import (
 )
 
 //define function for scpfile, src is source files, dst is destination file
-func scpfile(src, dst string) error {
+func ScpFile(src, dst string) error {
 	//open source files
 	srcfile, err := os.Open(src)
 	if err != nil{
