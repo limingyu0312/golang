@@ -6,25 +6,26 @@ import (
 	"os"
 )
 
+//define function for scpfile, src is source files, dst is destination file
 func scpfile(src, dst string) error {
-	//打开原文件
+	//open source files
 	srcfile, err := os.Open(src)
 	if err != nil{
 		return err
 	}
-	//延迟关闭原文件
+	//delay closing source files
 	defer srcfile.Close()
 
-	//创建目标文件
+	//create destination file
 	dstfile, err := os.Create(dst)
 	if err != nil{
 		return err
 	}
-	//延迟关闭目标文件
+	//delay closing destination file
 	defer dstfile.Close()
 
-	//拷贝原文件至目标文件中
-	//定义tmpdata用于存储临时读取的文件内容
+	//Copy source files to destination file
+	//Define 'tmpdata' to store temporarily read file contents
 	tmpdata := make([]byte, 1024)
 	for {
 		n, err := srcfile.Read(tmpdata)
