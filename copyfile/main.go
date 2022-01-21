@@ -42,5 +42,5 @@ func ScpFile(src, dst string) error {
 }
 
 func main() {
-	fmt.Println(scpfile("file01.txt", "file02.txt"))
+	fmt.Println(ScpFile("file01.txt", "file02.txt"))
 }
