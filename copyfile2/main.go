@@ -24,6 +24,8 @@ func Scp(src, dst string) error{
 	if err != nil{
 		return err
 	}
+	
+	defer dstfile.Close()
 
 	//创建写文件对象 
 	write := bufio.NewWriter(dstfile)
